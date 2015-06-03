@@ -27,6 +27,7 @@ char *compress(char *str){
             sprintf(str_of_count, "%d", count);
             len_of_count = strlen(str_of_count);
             if (index + len_of_count >= len){
+                free(compressed_str);
                 return str;
             }
             strncpy(&(compressed_str[index]), str_of_count, len_of_count);
