@@ -10,9 +10,9 @@ typedef struct _node{
     struct _node *link;
 } node, list;
 
-node *list_init();
-node *list_append(list *head, int data);
-node *list_delete(list *head, int data);
+list *list_init();
+list *list_append(list *head, int data);
+list *list_delete(list *head, int data);
 void list_traverse(list *head);
 
 #endif
