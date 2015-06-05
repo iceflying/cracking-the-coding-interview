@@ -27,16 +27,24 @@ list *list_append(list *head, int data){
     return head;
 }
 
+void delete_next_node(node *n){
+    node *tmp;
+    if (n == NULL || n->link == NULL){
+        return;
+    }
+    tmp = n->link;
+    n->link = tmp->link;
+    free(tmp);
+}
+
 list *list_delete(list *head, int data){
-    node *curr, *tmp;
+    node *curr;
     if (head == NULL){
         return NULL;
     }
     for (curr = head; curr->link != NULL; curr = curr->link){
         if (curr->link->data == data){
-            tmp = curr->link;
-            curr->link = tmp->link;
-            free(tmp);
+            delete_next_node(curr);
         }
     }
     return head;
