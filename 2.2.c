@@ -8,7 +8,7 @@
 node *nth_to_last(list *l, int n){
     node *nth, *last;
     int i;
-    if (l == NULL && l->link == NULL){
+    if (l == NULL || l->link == NULL){
         return NULL;
     }
     for (i=0, last = l; i < n; ++i){
