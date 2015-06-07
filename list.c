@@ -27,6 +27,17 @@ list *list_append(list *head, int data){
     return head;
 }
 
+void insert_after_node(node *n, int data){
+    node *new_node;
+    if (n == NULL){
+        return;
+    }
+    new_node = (node *)malloc(sizeof(*new_node));
+    new_node->data = data;
+    new_node->link = n->link;
+    n->link = new_node;
+}
+
 void delete_next_node(node *n){
     node *tmp;
     if (n == NULL || n->link == NULL){
@@ -67,3 +78,15 @@ void list_traverse(list *head){
     return ;
 }
 
+list *list_reverse(list *head){
+    list *rl;
+    node *curr;
+    if (head == NULL){
+        return NULL;
+    }
+    rl = list_init();
+    for (curr = head->link; curr != NULL; curr = curr->link){
+        insert_after_node(rl, curr->data);
+    }
+    return rl;
+}
