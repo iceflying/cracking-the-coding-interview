@@ -2,8 +2,8 @@
  * Author: Xin Quan <quanxin1991@163.com>
  */
 
-#ifndef _NODE_H
-#define _NODE_H
+#ifndef _LIST_H
+#define _LIST_H
 
 typedef struct _node{
     int data;
