@@ -4,7 +4,6 @@
 
 #include "stack.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 stack *stack_init(){
     stack *s;
